@@ -52,6 +52,6 @@ int main()
 {
 	MyFriendDetailInfo p1("park", 20, "seoul", "010-1234-1234");
 	p1.ShowMyFriendDetailInfo();
-
+	printf("hi");
 	return 0;
 }
