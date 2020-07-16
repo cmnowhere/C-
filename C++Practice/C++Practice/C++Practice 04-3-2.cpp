@@ -61,14 +61,13 @@ public:
 	}
 };
 
-//int main()
-//{
-//	namecard manclerk("lee", "abceng", "010-1111-2222", comp_pos::clerk);
-//	namecard mansenior("hong", "orangeeng", "010-3333-4444", comp_pos::senior);
-//	namecard manassist("kim", "sogoodcomp", "010-5555-4444", comp_pos::assist);
-//	manclerk.shownamecardinfo();
-//	mansenior.shownamecardinfo();
-//	manassist.shownamecardinfo();
-//
-//	return 0;
-//}
+int main()
+{
+	NameCard manclerk("lee", "abceng", "010-1111-2222", COMP_POS::CLERK);
+	NameCard mansenior("hong", "orangeeng", "010-3333-4444", COMP_POS::SENIOR);
+	NameCard manassist("kim", "sogoodcomp", "010-5555-4444", COMP_POS::ASSIST);
+	manclerk.ShowNameCardInfo();
+	mansenior.ShowNameCardInfo();
+	manassist.ShowNameCardInfo();
+	return 0;
+}

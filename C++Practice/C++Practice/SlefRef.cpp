@@ -23,13 +23,13 @@ public:
 	}
 };
 
-int main()
-{
-	SelfRef test(5);
-	SelfRef& ref = test.Adder(2);
-	test.ShowTwoNumber();
-	ref.ShowTwoNumber();
-
-	ref.Adder(1).ShowTwoNumber().Adder(2).ShowTwoNumber();
-	return 0;
-}
+//int main()
+//{
+//	SelfRef test(5);
+//	SelfRef& ref = test.Adder(2);
+//	test.ShowTwoNumber();
+//	ref.ShowTwoNumber();
+//
+//	ref.Adder(1).ShowTwoNumber().Adder(2).ShowTwoNumber();
+//	return 0;
+//}
