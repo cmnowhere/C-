@@ -41,5 +41,6 @@ int main()
 
 	cout << t.getnum2() << endl;
 
+	cout << "hi" << endl;
 	return 0;
 }
