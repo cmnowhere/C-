@@ -48,9 +48,9 @@ public:
 	}
 };
 
-//int main()
-//{
-//	MyFriendDetailInfo p1("park", 20, "seoul", "010-1234-1234");
-//	p1.ShowMyFriendDetailInfo();
-//	return 0;
-//}
+int main()
+{
+	MyFriendDetailInfo p1("park", 20, "seoul", "010-1234-1234");
+	p1.ShowMyFriendDetailInfo();
+	return 0;
+}

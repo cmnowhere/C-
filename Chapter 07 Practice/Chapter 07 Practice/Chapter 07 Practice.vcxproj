@@ -141,12 +141,8 @@
   <ItemGroup>
     <ClCompile Include="07-1-02.cpp" />
     <ClCompile Include="07-1.cpp" />
-    <ClCompile Include="07-2-1.cpp" />
-    <ClCompile Include="07-2-2.cpp" />
     <ClCompile Include="EmployeeManager1.cpp" />
     <ClCompile Include="Inheritance.cpp" />
-    <ClCompile Include="ISAInheritance.cpp" />
-    <ClCompile Include="protected.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
