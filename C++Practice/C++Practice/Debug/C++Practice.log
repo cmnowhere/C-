@@ -1,2 +1,3 @@
-﻿  SlefRef.cpp
-  C++Practice.vcxproj -> C:\Users\PCM\Desktop\C++\C++Practice\Debug\C++Practice.exe
+﻿  C++Practice 04-3-1.cpp
+C:\Users\PCM\Desktop\C++\C++Practice\C++Practice\C++Practice 04-3-1.cpp(27,14): error C2440: '초기화 중': 'const test'에서 'test'(으)로 변환할 수 없습니다.
+C:\Users\PCM\Desktop\C++\C++Practice\C++Practice\C++Practice 04-3-1.cpp(27,14): message : 복사 생성자가 모호하거나 사용할 수 있는 복사 생성자가 없어서 class 'test'을(를) 복사 생성할 수 없습니다.
