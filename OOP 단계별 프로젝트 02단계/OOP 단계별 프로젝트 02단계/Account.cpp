@@ -41,8 +41,8 @@ void Bank::Deposit()
 		cout << "입금할 금액 입력 : ";
 		cin >> money;
 		cout << endl;
-		arr[idx]->Balance += money;
-		cout << "현재 금액 : " <<arr[idx]->Balance << endl << endl;
+		arr[idx]->GetDeposit(money);
+		cout << "입금액 : " <<money<< endl << endl;
 	}
 
 }
@@ -70,8 +70,8 @@ void Bank::Withdrawal()
 		cout << "출금할 금액 입력 : ";
 		cin >> money;
 		cout << endl;
-		arr[idx]->Balance -= money;
-		cout << "현재 금액 : " << arr[idx]->Balance<< endl << endl;
+		arr[idx]->GetWithDraw(money);
+		cout << "출금액 : " << money<< endl << endl;
 	}
 }
 
@@ -83,9 +83,7 @@ void Bank::AllCheckMoney()
 
 	while (idx < NumOfAcc)
 	{
-		cout << "이름 : " << arr[idx]->GetName() << endl;
-		cout << "계좌번호 : " << arr[idx]->GetAccID() << endl;
-		cout << "잔액 : " << arr[idx]->Balance << endl << endl;
+		arr[idx]->GetCheckMoney();
 		idx++;
 	}
 }

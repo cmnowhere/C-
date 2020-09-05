@@ -2,52 +2,30 @@
 
 using namespace std;
 
-class Point
+class test
 {
-	int xpos, ypos;
-public:
-	Point(int x, int y) :xpos(x), ypos(y) {}
+private:
+	int num;
 
-	void ShowPointInfo() const
+public:
+	test() :num(100)
 	{
-		cout << "[" << xpos << ", " << ypos << "]" << endl;
+		cout << "기본생성자 생성완료" << endl;
 	}
+
+	test(test& ref)
+	{
+		num = ref.num;
+		cout << "복사생성자 생성완료" << endl;
+	}
+
 };
 
-class Circle
+int main()
 {
-	Point p;
-	int radius;
-public:
-	Circle(int x,int y,int r) : radius(r),p(x,y) {}
-	void ShowCircleInfo() const
-	{
-		cout << "Radius : " << radius << endl;
-		p.ShowPointInfo();
-	}
-};
+	const test t1;
+	test t2 = t1;
 
-class Ring
-{
-	Circle c1, c2;
-public:
-	Ring(int x1, int y1, int r1, int x2, int y2, int r2) : c1(x1,y1,r1), c2(x2, y2, r2) {}
-
-	void ShowRingInfo() const
-	{
-		cout << "Inner Circle . . ." << endl;
-		c1.ShowCircleInfo();
-		cout << "Outter Circle . . ." << endl;
-		c2.ShowCircleInfo();
-	}
-	
-};
-
-/*int main()
-{
-	Ring ring(1, 1, 4, 2, 2, 9);
-	ring.ShowRingInfo();
 	return 0;
-}*/
-
+}
 
