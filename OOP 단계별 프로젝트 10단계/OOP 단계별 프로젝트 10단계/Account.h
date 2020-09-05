@@ -7,28 +7,26 @@ using namespace std;
 class Account
 {
 private:
-	int AccID;
+	char* AccID;
 	char* Name;
 	int Balance;
 
 public:
 	Account() {}
-	Account(int accid, int money, const char name[]);
 
-	int GetAccID();
+	Account(const char accid[], int money, const char name[]);
+
+	char* GetAccID();
 
 	char* GetName();
 
-	virtual void GetDeposit(int m)
-	{
-		Balance += m;
-	}
+	virtual void GetDeposit(int m);
 
 	int GetWithDraw(int m);
 
 	virtual void GetCheckInfo() {};
 
-	int GetCheckMoney();
+	int GetMoney();
 
 
 	~Account()
@@ -36,6 +34,5 @@ public:
 		delete[] Name;
 	}
 };
-
 
 #endif

@@ -3,18 +3,18 @@
 
 using namespace std;
 
-HighCreditAccount::HighCreditAccount(int accid,int money, const char name[], double r, int c) : Account(accid, money,name), ratio(r), cre(c) {}
+HighCreditAccount::HighCreditAccount(const char accid[],int money, const char name[], double r, int c) : Account(accid, money,name), ratio(r), cre(c) {}
 
 void HighCreditAccount::GetCheckInfo()
 {
 	cout << "ÀÌ¸§ : " << GetName() << endl;
 	cout << "°èÁÂ¹øÈ£ : " << GetAccID() << endl;
-	cout << "ÀÜ¾× : " << GetCheckMoney() << endl << endl;
+	cout << "ÀÜ¾× : " << GetMoney() << endl << endl;
 }
 
 void HighCreditAccount::GetDeposit(int DePositMoney)
 {
-	int b=GetCheckMoney();
+	int b=GetMoney();
 	switch (cre)
 	{
 	case 1:

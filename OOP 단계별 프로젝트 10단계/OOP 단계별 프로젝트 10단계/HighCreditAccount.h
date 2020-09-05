@@ -8,7 +8,7 @@ private:
 	double ratio;
 	int cre;
 public:
-	HighCreditAccount(int accid,int money, const char name[], double r, int c);
+	HighCreditAccount(const char accid[],int money, const char name[], double r, int c);
 	virtual void GetDeposit(int m);
 	virtual void GetCheckInfo();
 };

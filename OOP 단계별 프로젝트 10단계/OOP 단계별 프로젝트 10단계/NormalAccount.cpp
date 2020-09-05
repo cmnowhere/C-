@@ -3,18 +3,18 @@
 
 using namespace std;
 
-NormalAccount::NormalAccount(int accid,int money, const char name[], double r) :Account(accid,money, name), ratio(r) {}
+NormalAccount::NormalAccount(const char accid[],int money, const char name[], double r) :Account(accid,money, name), ratio(r) {}
 
 void NormalAccount::GetCheckInfo()
 {
 	cout << "ÀÌ¸§ : " << GetName() << endl;
 	cout << "°èÁÂ¹øÈ£ : " << GetAccID() << endl;
-	cout << "ÀÜ¾× : " << GetCheckMoney() << endl << endl;
+	cout << "ÀÜ¾× : " << GetMoney() << endl << endl;
 }
 
 void NormalAccount::GetDeposit(int m)
 {	
-	int b = GetCheckMoney();
+	int b = GetMoney();
 	b += m+(int)(m * ratio/100);
 	Account::GetDeposit(b);
 }
