@@ -5,18 +5,19 @@ using namespace std;
 
 typedef Account* Account_PTR;
 
+template<typename T>
 class AccountArray
 {
 private:
-	Account_PTR* arr;
+	T* arr;
 	int len;
 public:
 	AccountArray(int l = 100) :len(l)
 	{
-		arr = new Account_PTR[l];
+		arr = new T[l];
 	}
 
-	Account_PTR& operator[](int idx)
+	T& operator[](int idx)
 	{
 		if (idx < 0 || idx >= len)
 		{

@@ -9,86 +9,83 @@ using namespace std;
 
 void Bank::MakeAccount()
 {
-	int n;
-
+	system("cls");
+	String accid;
+	int money, n, c;
+	char name[10];
+	double ratio;
 	try
 	{
-		cout << "[계좌종류선택]" << endl;
-		cout << "1.보통예금계좌 2.신용신뢰계좌" << endl << "선택 : ";
+		cout << "       [계좌종류선택]" << endl << endl;
+		cout << "1.보통예금계좌 2.신용신뢰계좌" << endl << endl << "선택 : ";
 		cin >> n;
-		if (cin.fail()||n < 0 || n>9)
+
+		if (cin.fail() || n < 0 || n>9)
 			throw n;
+
+		system("cls");
 
 		switch (n)
 		{
 		case 1:
-		{
-			try
-			{
-				char accid[20];
-				int money;
-				char name[10];
-				double ratio;
-
-				cout << endl << "이름 : ";
-				cin >> name;
-
-				cout << "계좌번호 : ";
-				cin >> accid;
-
-				cout << "입금액 : ";
-				cin >> money;
-				cout << "이자율 : ";
-				cin >> ratio;
-
-				arr[NumOfAcc] = new NormalAccount(accid, money, name, ratio);
-				NumOfAcc++;
-				if(strlen(name)-1=='\n')
-				break;
-			
-			
-		}
-		case 2:
-		{
-			char accid[20];
-			int money;
-			char name[10];
-			double ratio;
-			int c;
 			cout << endl << "이름 : ";
 			cin >> name;
 
-			cout << "계좌번호 : ";
+			cout << endl << "계좌번호 : ";
 			cin >> accid;
 
-			cout << "입금액 : ";
+			cout << endl << "입금액 : ";
 			cin >> money;
 
-			cout << "이자율 : ";
+			cout << endl << "이자율 : ";
 			cin >> ratio;
 
-			cout << "신용등급(1 to A, 2 to B, 3 to C) : ";
+			arr[NumOfAcc] = new NormalAccount(accid, money, name, ratio);
+			NumOfAcc++;
+			break;
+
+		case 2:
+			cout << endl << "이름 : ";
+			cin >> name;
+
+			cout << endl << "계좌번호 : ";
+			cin >> accid;
+
+			cout << endl << "입금액 : ";
+			cin >> money;
+
+			cout << endl << "이자율 : ";
+			cin >> ratio;
+
+			cout << endl << "신용등급(1 to A, 2 to B, 3 to C) : ";
 			cin >> c;
 
 			arr[NumOfAcc] = new HighCreditAccount(accid, money, name, ratio, c);
 			NumOfAcc++;
-
 			break;
-		}
+
 		default:
 			break;
 		}
 	}
 	catch (int)
 	{
-		cout << "잘못 입력되었습니다." << endl;
+		cout << "Error !! 잘못 입력되었습니다." << endl;
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
+		Sleep(2000);
+		system("cls");
 	}
+	system("cls");
+	cout << "   ★ 계정 생성 완료 ★" << endl;
+	Sleep(2000);
+	system("cls");
 }
 
 void Bank::Deposit()
 {
+	system("cls");
+
 	int idx = 0, money;
 	char name[10];
 	cout << endl;
@@ -97,7 +94,7 @@ void Bank::Deposit()
 	cout << endl;
 	while (idx <= NumOfAcc)
 	{
-		if (!strcmp(name, arr[idx]->GetName()))
+		if (arr[idx]->GetName() == name)
 			break;
 
 		idx++;
@@ -118,6 +115,8 @@ void Bank::Deposit()
 
 void Bank::Withdrawal()
 {
+	system("cls");
+
 	int idx = 0, money;
 	char name[10];
 	cout << endl;
@@ -126,7 +125,7 @@ void Bank::Withdrawal()
 	cout << endl;
 	while (idx <= NumOfAcc)
 	{
-		if (!strcmp(name, arr[idx]->GetName()))
+		if (arr[idx]->GetName() == name)
 			break;
 
 		idx++;
@@ -146,15 +145,21 @@ void Bank::Withdrawal()
 
 void Bank::AllCheckMoney()
 {
+	system("cls");
+
 	int idx = 0;
 	cout << endl;
-	cout << "전체 고객 잔액 조회" << endl << endl;
+	cout << "---전체 고객 잔액 조회---" << endl << endl;
 
 	while (idx < NumOfAcc)
 	{
 		arr[idx]->GetCheckInfo();
 		idx++;
 	}
+	cout << endl<<"-------------------------" << endl<<endl<<endl;
+
+	system("pause");
+	system("cls");
 }
 
 void Bank::ShowMenu()

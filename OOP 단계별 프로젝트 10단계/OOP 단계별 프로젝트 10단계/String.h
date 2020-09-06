@@ -16,9 +16,10 @@ public:
 	String(const String& ref);
 	String operator+(String& ref);
 	String& operator=(const String& ref);
+	int operator==(char ref[]);
 	~String();
-	friend ostream& operator<<(ostream& ref1, String& ref2);
-	friend istream& operator>>(ostream& ref1, String& ref2);
+	friend ostream& operator<<(ostream& ref1, const String& ref2);
+	friend istream& operator>>(istream& ref1, String& ref2);
 };
 
 #endif

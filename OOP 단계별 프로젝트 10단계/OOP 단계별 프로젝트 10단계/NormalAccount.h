@@ -7,7 +7,7 @@ class NormalAccount :public Account
 private:
 	double ratio;
 public:
-	NormalAccount(const char accid[], int money,const char name[], double r);
+	NormalAccount(String accid, int money, String name, double r);
 	virtual void GetDeposit(int m);
 	virtual void GetCheckInfo();
 };

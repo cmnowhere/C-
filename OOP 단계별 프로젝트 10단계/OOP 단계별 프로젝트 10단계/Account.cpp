@@ -3,21 +3,14 @@
 
 using namespace std;
 
-Account::Account(const char accid[],int money, const char name[]) :Balance(money)
-{
-	AccID = new char[strlen(accid) + 1];
-	strcpy_s(AccID, strlen(accid) + 1, name);
+Account::Account(String accid,int money, String name) :AccID(accid),Balance(money),Name(name){}
 
-	Name = new char[strlen(name) + 1];
-	strcpy_s(Name, strlen(name) + 1, name);
-}
-
-char* Account::GetAccID()
+String Account::GetAccID()
 {
 	return AccID;
 }
 
-char* Account::GetName()
+String Account::GetName()
 {
 	return Name;
 }

@@ -3,7 +3,7 @@
 #include "String.h"
 using namespace std;
 
-String::String() :len(10)
+String::String() :len(100)
 {
 	str = NULL;
 }
@@ -47,16 +47,22 @@ String& String::operator=(const String& ref)
 	return *this;
 }
 
+int String::operator==(char ref[])
+{
+	return !strcmp(str, ref);
+}
+
 String::~String()
 {
 	delete[]str;
 }
 
-ostream& operator<<(ostream& ref1, String& ref2)
+ostream& operator<<(ostream& ref1,const String& ref2)
 {
 	ref1 << ref2.str;
 	return ref1;
 }
+
 istream& operator>>(istream& ref1, String& ref2)
 {
 	char str[100];

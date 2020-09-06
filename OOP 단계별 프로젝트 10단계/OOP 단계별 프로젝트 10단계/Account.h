@@ -2,23 +2,24 @@
 #define __Account_h__
 
 #define LEN 100
+
+#include "String.h"
+
 using namespace std;
 
 class Account
 {
 private:
-	char* AccID;
-	char* Name;
+	String AccID;
+	String Name;
 	int Balance;
 
 public:
-	Account() {}
+	Account(String accid, int money, String name);
 
-	Account(const char accid[], int money, const char name[]);
+	String GetAccID();
 
-	char* GetAccID();
-
-	char* GetName();
+	String GetName();
 
 	virtual void GetDeposit(int m);
 
@@ -27,12 +28,6 @@ public:
 	virtual void GetCheckInfo() {};
 
 	int GetMoney();
-
-
-	~Account()
-	{
-		delete[] Name;
-	}
 };
 
 #endif

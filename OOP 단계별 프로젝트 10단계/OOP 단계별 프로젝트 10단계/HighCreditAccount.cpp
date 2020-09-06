@@ -3,7 +3,7 @@
 
 using namespace std;
 
-HighCreditAccount::HighCreditAccount(const char accid[],int money, const char name[], double r, int c) : Account(accid, money,name), ratio(r), cre(c) {}
+HighCreditAccount::HighCreditAccount(String accid,int money, String name, double r, int c) : Account(accid, money,name), ratio(r), cre(c) {}
 
 void HighCreditAccount::GetCheckInfo()
 {

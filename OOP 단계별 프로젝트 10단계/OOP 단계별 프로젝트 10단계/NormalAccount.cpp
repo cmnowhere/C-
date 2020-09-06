@@ -3,7 +3,7 @@
 
 using namespace std;
 
-NormalAccount::NormalAccount(const char accid[],int money, const char name[], double r) :Account(accid,money, name), ratio(r) {}
+NormalAccount::NormalAccount(String accid,int money, String name, double r) :Account(accid,money,name), ratio(r) {}
 
 void NormalAccount::GetCheckInfo()
 {
