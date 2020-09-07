@@ -30,5 +30,14 @@
     <ClCompile Include="11-2 review.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="11-2 review_pointer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="newoperator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Initializing_Test.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

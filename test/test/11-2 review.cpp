@@ -45,6 +45,8 @@
 //	BoundCheck2DIntArray(int r, int c) :arrlen(r)
 //	{
 //		arr = new BoundCheckIntArray_PTR[r];
+//		for(int i=0;i<r;i++)
+//			arr[i] = new BoundCheckIntArray[c];
 //	}
 //
 //	BoundCheckIntArray& operator[](int idx) 
@@ -54,8 +56,6 @@
 //			cout << "Out of Index" << endl;
 //			exit(-1);
 //		}
-//
-//		arr[idx] = new BoundCheckIntArray(arrlen);
 //
 //		return *arr[idx];
 //	}
