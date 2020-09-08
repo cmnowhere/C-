@@ -1,39 +1,42 @@
-//#include <iostream>
-//
-//using namespace std;
-//
-//class point
-//{
-//private:
-//	int xpos, ypos;
-//
-//public:
-//	point(int x = 0, int y = 0) :xpos(x), ypos(y)
-//	{
-//		cout << "객채 생성완료" << endl;
-//	}
-//
-//	void* operator new(size_t s)
-//	{
-//		cout << "동적할당" << endl;
-//		void* adress = new char[s];
-//		return adress;
-//	}
-//
-//	friend ostream& operator<<(ostream& cout, const point& ref);
-//};
-//
-//ostream& operator<<(ostream& cout, const point& ref)
-//{
-//	cout << ref.xpos << ',' << ref.ypos << endl;
-//	return cout;
-//}
-//
-//int main()
-//{
-//	point* ptr = new point(3, 4);
-//
-//
-//
-//	return 0;
-//}
+#include <iostream>
+
+using namespace std;
+
+class test
+{
+	int n;
+public:
+	test(int n = 10) :n(n)
+	{
+		cout << "test constructor" << endl;
+	}
+
+	void* operator new(size_t size)
+	{
+		cout << "new operator" << endl;
+		void* address = new char[size];
+		return address;
+	}
+
+	void* operator new[](size_t size)
+	{
+		cout << "new[] operator" << endl;
+		void* address = new char[size];
+		return address;
+	}
+
+	~test()
+	{
+		cout << "test destroy" << endl;
+	}
+};
+
+int main()
+{
+	test* t1 = new test[10];
+	test* t2 = new test;
+
+	delete t2;
+	delete t1;
+	return 0;
+}
