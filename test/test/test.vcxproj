@@ -144,6 +144,7 @@
     <ClCompile Include="ArrayClass_Obj_PTR_Template.cpp" />
     <ClCompile Include="const_test.cpp" />
     <ClCompile Include="const_test_array_error.cpp" />
+    <ClCompile Include="functor_review.cpp" />
     <ClCompile Include="Initializing_Test.cpp" />
     <ClCompile Include="newoperator.cpp" />
     <ClCompile Include="test.cpp" />
