@@ -67,6 +67,12 @@ void Bank::MakeAccount()
 		default:
 			break;
 		}
+
+		system("cls");
+		cout << "   ★ 계정 생성 완료 ★" << endl;
+		Sleep(2000);
+		system("cls");
+
 	}
 	catch (int)
 	{
@@ -76,10 +82,7 @@ void Bank::MakeAccount()
 		Sleep(2000);
 		system("cls");
 	}
-	system("cls");
-	cout << "   ★ 계정 생성 완료 ★" << endl;
-	Sleep(2000);
-	system("cls");
+	
 }
 
 void Bank::Deposit()
@@ -93,24 +96,28 @@ void Bank::Deposit()
 	cin >> name;
 	cout << endl;
 
-	while (idx <= NumOfAcc)
+	while (idx < NumOfAcc)
 	{
 		if (arr[idx]->GetName() == name)
 			break;
 		idx++;
 	}
 
-	if (idx > NumOfAcc)
+	if (idx >= NumOfAcc)
 		cout << "/// 해당 고객 없음 ///" << endl;
 	else
 	{
 		try
 		{
-			cout << "입금할 금액 입력 : ";
-			cin >> money;
-			cout << endl;
-			arr[idx]->GetDeposit(money);
-			cout << "입금액 : " << money << endl << endl;
+			if (arr[idx]->GetName() == name)
+			{
+				cout << "입금할 금액 입력 : ";
+				cin >> money;
+				cout << endl;
+				cout << idx << ' ' << NumOfAcc << endl;
+				arr[idx]->GetDeposit(money);
+				cout << "입금액 : " << money << endl << endl;
+			}
 		}
 		catch (ExceptionClass& expn)
 		{
@@ -118,6 +125,26 @@ void Bank::Deposit()
 		}
 	}
 
+	/*try
+	{
+		for (int i = 0; i < NumOfAcc; i++)
+		{
+			if (arr[i]->GetName() == name)
+			{
+				cout << "입금할 금액 입력 : ";
+				cin >> money;
+				cout << endl;
+				cout << idx << ' ' << NumOfAcc << endl;
+				arr[idx]->GetDeposit(money);
+				cout << "입금액 : " << money << endl << endl;
+			}
+		}
+		cout << "/// 해당 고객 없음 ///" << endl;
+	}
+	catch (ExceptionClass& expn)
+	{
+		expn.Exception_Error();
+	}*/
 }
 
 void Bank::Withdrawal()
