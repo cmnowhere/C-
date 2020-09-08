@@ -4,7 +4,23 @@
 
 using namespace std;
 
-class sort
+class sortfunctor
+{
+private:
+	int add;
+public:
+	sortfunctor()
+	{
+		cout << "test" << endl;
+	}
+};
+
+class descsort
+{
+
+};
+
+class ascsort
 {
 
 };
