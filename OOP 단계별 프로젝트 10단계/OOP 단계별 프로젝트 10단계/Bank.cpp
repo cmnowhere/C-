@@ -149,14 +149,14 @@ void Bank::AllCheckMoney()
 
 	int idx = 0;
 	cout << endl;
-	cout << "---ÀüÃ¼ °í°´ ÀÜ¾× Á¶È¸---" << endl << endl;
+	cout << "------ÀüÃ¼ °í°´ ÀÜ¾× Á¶È¸------" << endl << endl;
 
 	while (idx < NumOfAcc)
 	{
 		arr[idx]->GetCheckInfo();
 		idx++;
 	}
-	cout << endl<<"-------------------------" << endl<<endl<<endl;
+	cout << endl<<"-------------------------------" << endl<<endl<<endl;
 
 	system("pause");
 	system("cls");

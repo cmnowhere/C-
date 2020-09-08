@@ -141,9 +141,13 @@
   <ItemGroup>
     <ClCompile Include="11-2 review.cpp" />
     <ClCompile Include="11-2 review_pointer.cpp" />
+    <ClCompile Include="13-2 class template.cpp" />
     <ClCompile Include="ArrayClass_Obj_PTR_Template.cpp" />
     <ClCompile Include="const_test.cpp" />
     <ClCompile Include="const_test_array_error.cpp" />
+    <ClCompile Include="default_exception_.cpp" />
+    <ClCompile Include="Exception_Class.cpp" />
+    <ClCompile Include="functor_review.cpp" />
     <ClCompile Include="Initializing_Test.cpp" />
     <ClCompile Include="newoperator.cpp" />
     <ClCompile Include="test.cpp" />
